@@ -63,7 +63,7 @@ const int X2_W = X2_I + X2_F; // bit width
 typedef ac_int  <X2_W,       false>               x2_int_t;
 typedef ac_fixed<X2_W, X2_J, false, trn, AC_WRAP> x2_fxd_t; // u0.17
 
-// Coefficients: s4.28
+// Coefficients: s4.28 (Orginally)
 // a:
 const int A_I =  3;  // <optimize> 3
 const int A_F = 22;  // <optimize> 22

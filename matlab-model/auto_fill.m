@@ -1,5 +1,5 @@
 fid_in  = fopen("hex_coeffs_opt.txt", "r");
-fid_out = fopen("../rtl-model/lut.vs", "w");
+fid_out = fopen("../rtl-model/lut.svh", "w");
 
 if fid_in < 0
     error("Could not open input file");
@@ -21,7 +21,7 @@ endwhile
 
 K = length(lines);
 
-fprintf(fid_out, "`include \"quadra.vh\"\n\n");
+fprintf(fid_out, "`include \"quadra.svh\"\n\n");
 fprintf(fid_out, "module lut\n(\n");
 fprintf(fid_out, "    input  x1_t  x1,\n");
 fprintf(fid_out, "    output a_t   a,\n");
