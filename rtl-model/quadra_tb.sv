@@ -6,7 +6,7 @@
 //  PURPOSE:   simple test bench for quadra_top.vs
 //------------------------------------------------------------------------
 
-`include "quadra.vh"
+`include "quadra.svh"
 
 `timescale 1ps/1ps
 
