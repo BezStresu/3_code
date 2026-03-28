@@ -84,19 +84,19 @@ localparam int T0_I = A_I;
 localparam int T0_F = S_F;
 localparam int T0_W = T0_I + T0_F;
 
-typedef logic [T0_W-1:0] t0_t; // t0 = a
+typedef logic signed [T0_W-1:0] t0_t; // t0 = a
 
 localparam int T1_I = B_I + X2_I;
 localparam int T1_F = S_F;
 localparam int T1_W = T1_I + T1_F;
 
-typedef logic [T1_W-1:0] t1_t; // t1 = b * x2
+typedef logic signed [T1_W-1:0] t1_t; // t1 = b * x2
 
 localparam int T2_I = C_I + SQ_I;
 localparam int T2_F = S_F;
 localparam int T2_W = T2_I + T2_F;
 
-typedef logic [T2_W-1:0] t2_t; // t2 = c * x2^2
+typedef logic signed [T2_W-1:0] t2_t; // t2 = c * x2^2
 
 
 `endif
