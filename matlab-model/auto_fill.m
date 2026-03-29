@@ -1,5 +1,5 @@
 fid_in  = fopen("hex_coeffs_opt.txt", "r");
-fid_out = fopen("../rtl-model/lut.svh", "w");
+fid_out = fopen("../rtl-model/lut.sv", "w");
 
 if fid_in < 0
     error("Could not open input file");

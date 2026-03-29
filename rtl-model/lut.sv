@@ -1,5 +1,7 @@
 `include "quadra.svh"
 
+`timescale 1ps/1ps
+
 module lut
 (
     input  x1_t  x1,

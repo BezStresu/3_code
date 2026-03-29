@@ -1,4 +1,7 @@
 // File: quarda.sv
+
+`timescale 1ps/1ps
+
 `include "quadra.svh"
 `include "square.sv"
 `include "lut.sv"
@@ -43,9 +46,9 @@ module quadra
         if(!rst_b) begin
             x2_r1 <= '0;
             sq_r1 <= '0;
-            a_r1  <= '0';
+            a_r1  <= '0;
             b_r1  <= '0;
-            c_r1  <= '0';
+            c_r1  <= '0;
         end
         else begin
             x2_r1 <= x2_w;
@@ -76,7 +79,8 @@ module quadra
             t2_r2 <= '0;
         end
         else begin
-            t0_r2 <= a_r1;
+            //t0_r2 <= a_r1; // warning
+            t0_r2 <= {{T0_W-A_W{a_r1[A_W-1]}}, a_r1}; 
             t1_r2 <= t1_w;
             t2_r2 <= t2_w;
         end
@@ -84,9 +88,15 @@ module quadra
 
     // Stage 3 sum
     s_t s_w;
+    logic signed [T0_W + T1_W + T2_W - 1:0] s_full;
 
     always_comb begin
-        s_w = t0_r2 + t1_r2 + t2_r2;
+        //s_w = t0_r2 + t1_r2 + t2_r2; // Warning
+
+        s_full = {{T1_W+T2_W{t0_r2[T0_W-1]}}, t0_r2} +
+                {{T0_W+T2_W{t1_r2[T1_W-1]}}, t1_r2} +
+                {{T0_W+T1_W{t2_r2[T2_W-1]}}, t2_r2};
+        s_w = s_full[S_W-1:0];
     end
 
     y_t y_r;
@@ -96,7 +106,8 @@ module quadra
             y_r <= '0;
         end
         else begin
-            y_r <= s_w;
+            //y_r <= s_w; // Warning
+            y_r <= s_w[S_W-1 -: Y_W];
         end
     end
 

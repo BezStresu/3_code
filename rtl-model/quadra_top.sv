@@ -1,4 +1,7 @@
 // File: quarda_top.sv
+
+`timescale 1ps/1ps
+
 `include "quadra.svh"
 
 module quadra_top

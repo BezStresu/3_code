@@ -1,5 +1,7 @@
 // File: quarda.svh
 
+`timescale 1ps/1ps
+
 `ifndef QUADRA_VH
 `define QUADRA_VH
 
