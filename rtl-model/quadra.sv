@@ -1,52 +1,105 @@
-// File: quadra.sv
-// Quadratic polynomial: f(x) = a + b*x2 + c*(x2^2)
-
+// File: quarda.sv
 `include "quadra.svh"
 `include "square.sv"
 `include "lut.sv"
 
 module quadra
 (
-    input  x_t x,
-    output y_t y
+    input  ck_t   clk,
+    input  rs_t   rst_b,
+    input  x_t    x,
+    output y_t    y
 );
 
-    wire x1_t x1;
-    wire x2_t x2; 
+    // Connections initialization
+    wire x1_t x1_w = x[X_W-1:X2_W];
+    wire x2_t x2_w = x[X2_W-1:0];
 
-    assign x1 = x[X_W-1:X2_W]; 
-    assign x2 = x[X2_W-1:0]; 
+    wire sq_t sq_w;
+    wire a_t  a_w;
+    wire b_t  b_w;
+    wire c_t  c_w;
 
-    wire sq_t sq;
+    // Stage 1 lut + square
     square u_square(
-        .x2(x2),
-        .sq(sq)
+        .x2(x2_w),
+        .sq(sq_w)
     );
-
-    wire a_t a;
-    wire b_t b;
-    wire c_t c;
 
     lut u_lut(
-        .x1(x1),
-        .a(a),
-        .b(b),
-        .c(c)
+        .x1(x1_w),
+        .a(a_w),
+        .b(b_w),
+        .c(c_w)
     );
 
-    t0_t t0;  // t0 = a
-    t1_t t1;  // t1 = b * x2
-    t2_t t2;  // t2 = c * x2^2
-    s_t s;    // sum
+    x2_t x2_r1;
+    sq_t sq_r1;
+    a_t  a_r1;
+    b_t  b_r1;
+    c_t  c_r1;
+
+    always_ff @(posedge clk) begin
+        if(!rst_b) begin
+            x2_r1 <= '0;
+            sq_r1 <= '0;
+            a_r1  <= '0';
+            b_r1  <= '0;
+            c_r1  <= '0';
+        end
+        else begin
+            x2_r1 <= x2_w;
+            sq_r1 <= sq_w;
+            a_r1  <= a_w;
+            b_r1  <= b_w;
+            c_r1  <= c_w;
+        end
+    end
+
+    // Stage 2 multiplications
+    t1_t t1_w;
+    t2_t t2_w;
 
     always_comb begin
-        t0 = a;
-        t1 = b * x2;
-        t2 = c * sq;
-
-        s = t0 + t1 + t2;
-
-        y = s; 
+        t1_w = (b_r1 * x2_r1) >> (X2_F - (T1_F - B_F));
+        t2_w = (c_r1 * sq_r1) >> (SQ_F - (T2_F - C_F));
     end
+
+    t0_t t0_r2;
+    t1_t t1_r2;
+    t2_t t2_r2;
+
+    always_ff @(posedge clk) begin
+        if(!rst_b) begin
+            t0_r2 <= '0;
+            t1_r2 <= '0;
+            t2_r2 <= '0;
+        end
+        else begin
+            t0_r2 <= a_r1;
+            t1_r2 <= t1_w;
+            t2_r2 <= t2_w;
+        end
+    end
+
+    // Stage 3 sum
+    s_t s_w;
+
+    always_comb begin
+        s_w = t0_r2 + t1_r2 + t2_r2;
+    end
+
+    y_t y_r;
+
+    always_ff @(posedge clk) begin
+        if(!rst_b) begin
+            y_r <= '0;
+        end
+        else begin
+            y_r <= s_w;
+        end
+    end
+
+    assign y = y_r;
 
 endmodule
