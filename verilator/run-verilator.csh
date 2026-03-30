@@ -52,7 +52,8 @@
 #     ${RTL_DIR}/quadra_top.sv \
 #     ${RTL_DIR}/square.sv \
 #     ${RTL_DIR}/lut.sv \
-#     ${RTL_DIR}/quadra.sv
+#     ${RTL_DIR}/quadra.sv \
+#     ${RTL_DIR}/quadra.svh 
 
 # echo "--------------------------------------------------------------------------------"
 # echo "... done with 'verilator'."
@@ -106,7 +107,7 @@ verilator \
     ${RTL_DIR}/square.sv \
     ${RTL_DIR}/lut.sv \
     ${RTL_DIR}/quadra.sv \
-    ${RTL_DIR}/quadra.svh   # <-- dodane, żeby Verilator widział typedefs itp.
+    ${RTL_DIR}/quadra.svh 
 
 echo "--------------------------------------------------------------------------------"
 echo "... done with 'verilator'."
