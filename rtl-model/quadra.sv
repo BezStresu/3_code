@@ -3,8 +3,8 @@
 `timescale 1ps/1ps
 
 `include "quadra.svh"
-`include "square.sv"
-`include "lut.sv"
+// `include "square.sv"
+// `include "lut.sv"
 
 module quadra
 (

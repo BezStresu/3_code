@@ -15,8 +15,12 @@ class alignas(VL_CACHE_LINE_BYTES) Vquadra_tb___024root final {
   public:
 
     // DESIGN SPECIFIC STATE
+    CData/*0:0*/ quadra_tb__DOT__x_dv;
     CData/*0:0*/ quadra_tb__DOT__clk;
     CData/*0:0*/ quadra_tb__DOT__rst_b;
+    CData/*0:0*/ quadra_tb__DOT__u0__DOT__dv_p0;
+    CData/*0:0*/ quadra_tb__DOT__u0__DOT__dv_p1;
+    CData/*0:0*/ quadra_tb__DOT__u0__DOT__dv_p2;
     CData/*0:0*/ __VstlFirstIteration;
     CData/*0:0*/ __VstlPhaseResult;
     CData/*0:0*/ __Vtrigprevexpr___TOP__quadra_tb__DOT__clk__0;
@@ -43,6 +47,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vquadra_tb___024root final {
     VlUnpacked<QData/*63:0*/, 1> __VactTriggered;
     VlUnpacked<QData/*63:0*/, 1> __VactTriggeredAcc;
     VlUnpacked<QData/*63:0*/, 1> __VnbaTriggered;
+    VlUnpacked<CData/*0:0*/, 4> __Vm_traceActivity;
     VlDelayScheduler __VdlySched;
     VlTriggerScheduler __VtrigSched_h1497f015__0;
 

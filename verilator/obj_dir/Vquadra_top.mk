@@ -2,9 +2,9 @@
 # DESCRIPTION: Verilator output: Makefile for building Verilated archive or executable
 #
 # Execute this makefile from the object directory:
-#    make -f Vquadra_tb.mk
+#    make -f Vquadra_top.mk
 
-default: Vquadra_tb
+default: Vquadra_top
 
 ### Constants...
 # Perl executable (from $PERL, defaults to 'perl' if not set)
@@ -32,36 +32,42 @@ VM_SC_TARGET_ARCH = linux
 
 ### Vars...
 # Design prefix (from --prefix)
-VM_PREFIX = Vquadra_tb
+VM_PREFIX = Vquadra_top
 # Module prefix (from --prefix)
-VM_MODPREFIX = Vquadra_tb
+VM_MODPREFIX = Vquadra_top
 # User CFLAGS (from -CFLAGS on Verilator command line)
 VM_USER_CFLAGS = \
-  -DVL_TIME_CONTEXT \
+  -std=c++17 -I/home/jakub/Desktop/Interview/3_code/libs/ac_types/include -I/home/jakub/Desktop/Interview/3_code/c++-model \
 
 # User LDLIBS (from -LDFLAGS on Verilator command line)
 VM_USER_LDLIBS = \
-  -lz \
 
 # User .cpp files (from .cpp's on Verilator command line)
 VM_USER_CLASSES = \
+  Quadra \
+  sim_main \
 
 # User .cpp directories (from .cpp's on Verilator command line)
 VM_USER_DIR = \
   .. \
+  ../../c++-model \
 
 ### Default rules...
 # Include list of all generated classes
-include Vquadra_tb_classes.mk
+include Vquadra_top_classes.mk
 # Include global rules
 include $(VERILATOR_ROOT)/include/verilated.mk
 
 ### Executable rules... (from --exe)
 VPATH += $(VM_USER_DIR)
 
+Quadra.o: /home/jakub/Desktop/Interview/3_code/c++-model/Quadra.cpp 
+	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST)  -c -o $@ $<
+sim_main.o: sim_main.cpp 
+	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST)  -c -o $@ $<
 
 ### Link rules... (from --exe)
-Vquadra_tb: $(VK_USER_OBJS) $(VK_GLOBAL_OBJS) $(VM_PREFIX)__ALL.a
+Vquadra_top: $(VK_USER_OBJS) $(VK_GLOBAL_OBJS) $(VM_PREFIX)__ALL.a
 	$(LINK) $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) $(LIBS) $(SC_LIBS) -o $@
 
 # Verilated -*- Makefile -*-

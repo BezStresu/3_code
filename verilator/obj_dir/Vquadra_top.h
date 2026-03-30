@@ -5,20 +5,20 @@
 // The class here is then constructed to instantiate the design.
 // See the Verilator manual for examples.
 
-#ifndef VERILATED_VQUADRA_TB_H_
-#define VERILATED_VQUADRA_TB_H_  // guard
+#ifndef VERILATED_VQUADRA_TOP_H_
+#define VERILATED_VQUADRA_TOP_H_  // guard
 
 #include "verilated.h"
 
-class Vquadra_tb__Syms;
-class Vquadra_tb___024root;
-class VerilatedFstC;
+class Vquadra_top__Syms;
+class Vquadra_top___024root;
+class VerilatedVcdC;
 
 // This class is the main interface to the Verilated model
-class alignas(VL_CACHE_LINE_BYTES) Vquadra_tb VL_NOT_FINAL : public VerilatedModel {
+class alignas(VL_CACHE_LINE_BYTES) Vquadra_top VL_NOT_FINAL : public VerilatedModel {
   private:
     // Symbol table holding complete model state (owned by this class)
-    Vquadra_tb__Syms* const vlSymsp;
+    Vquadra_top__Syms* const vlSymsp;
 
   public:
 
@@ -29,6 +29,12 @@ class alignas(VL_CACHE_LINE_BYTES) Vquadra_tb VL_NOT_FINAL : public VerilatedMod
     // PORTS
     // The application code writes and reads these signals to
     // propagate new values into/out from the Verilated model.
+    VL_IN8(&clk,0,0);
+    VL_IN8(&rst_b,0,0);
+    VL_IN8(&x_dv,0,0);
+    VL_OUT8(&y_dv,0,0);
+    VL_IN(&x,23,0);
+    VL_OUT(&y,23,0);
 
     // CELLS
     // Public to allow access to /* verilator public */ items.
@@ -36,19 +42,19 @@ class alignas(VL_CACHE_LINE_BYTES) Vquadra_tb VL_NOT_FINAL : public VerilatedMod
 
     // Root instance pointer to allow access to model internals,
     // including inlined /* verilator public_flat_* */ items.
-    Vquadra_tb___024root* const rootp;
+    Vquadra_top___024root* const rootp;
 
     // CONSTRUCTORS
     /// Construct the model; called by application code
     /// If contextp is null, then the model will use the default global context
     /// If name is "", then makes a wrapper with a
     /// single model invisible with respect to DPI scope names.
-    explicit Vquadra_tb(VerilatedContext* contextp, const char* name = "TOP");
-    explicit Vquadra_tb(const char* name = "TOP");
+    explicit Vquadra_top(VerilatedContext* contextp, const char* name = "TOP");
+    explicit Vquadra_top(const char* name = "TOP");
     /// Destroy the model; called (often implicitly) by application code
-    virtual ~Vquadra_tb();
+    virtual ~Vquadra_top();
   private:
-    VL_UNCOPYABLE(Vquadra_tb);  ///< Copying not allowed
+    VL_UNCOPYABLE(Vquadra_top);  ///< Copying not allowed
 
   public:
     // API METHODS
