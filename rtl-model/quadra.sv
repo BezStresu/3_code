@@ -97,8 +97,15 @@ module quadra
     // Stage 3 sum
     s_t s_w;
 
+    logic signed [S_W-1:0] t0_ext, t1_ext, t2_ext;
+
     always_comb begin
-        s_w = t0_r2 + t1_r2 + t2_r2; // Warning
+        //s_w = t0_r2 + t1_r2 + t2_r2; // Warning
+        t0_ext = t0_r2;
+        t1_ext = t1_r2;
+        t2_ext = t2_r2;
+
+        s_w = t0_ext + t1_ext + t2_ext;
     end
 
     y_t y_r;
