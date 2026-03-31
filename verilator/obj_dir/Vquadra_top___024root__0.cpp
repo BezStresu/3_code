@@ -128,26 +128,45 @@ void Vquadra_top___024root___nba_sequent__TOP__0(Vquadra_top___024root* vlSelf) 
         vlSelfRef.quadra_top__DOT__u_quadra__DOT__y_r 
             = (0x00ffffffU & VL_SHIFTRS_III(29,29,32, 
                                             (0x1fffffffU 
-                                             & (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t0_r2 
-                                                + (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2 
-                                                   + vlSelfRef.quadra_top__DOT__u_quadra__DOT__t1_r2))), 4U));
+                                             & ((((0x40000000U 
+                                                   & (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t0_r2 
+                                                      << 1U)) 
+                                                  | vlSelfRef.quadra_top__DOT__u_quadra__DOT__t0_r2) 
+                                                 + 
+                                                 (((0x40000000U 
+                                                    & (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t1_r2 
+                                                       << 1U)) 
+                                                   | vlSelfRef.quadra_top__DOT__u_quadra__DOT__t1_r2) 
+                                                  + 
+                                                  ((0x60000000U 
+                                                    & ((- (IData)(
+                                                                  (1U 
+                                                                   & (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2 
+                                                                      >> 0x0000001cU)))) 
+                                                       << 0x0000001dU)) 
+                                                   | vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2))) 
+                                                >> 2U)), 4U));
         vlSelfRef.quadra_top__DOT__u_quadra__DOT__t0_r2 
             = (0x3fffffffU & VL_SHIFTL_III(30,30,32, 
                                            VL_EXTENDS_II(30,25, vlSelfRef.quadra_top__DOT__u_quadra__DOT__a_r1), 5U));
-        vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2 
-            = (0x1fffffffU & (IData)((0x0000001fffffffffULL 
-                                      & VL_SHIFTRS_QQI(37,37,32, 
-                                                       (0x0000001fffffffffULL 
-                                                        & ((QData)((IData)(vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_r1)) 
-                                                           * (QData)((IData)(vlSelfRef.quadra_top__DOT__u_quadra__DOT__sq_r1)))), 8U))));
         vlSelfRef.quadra_top__DOT__u_quadra__DOT__t1_r2 
             = (0x3fffffffU & (IData)((0x0000000fffffffffULL 
                                       & VL_SHIFTRS_QQI(36,36,32, 
                                                        (0x0000000fffffffffULL 
                                                         & ((QData)((IData)(vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_r1)) 
                                                            * (QData)((IData)(vlSelfRef.quadra_top__DOT__u_quadra__DOT__x2_r1)))), 6U))));
+        vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2 
+            = (0x1fffffffU & (IData)((0x0000001fffffffffULL 
+                                      & VL_SHIFTRS_QQI(37,37,32, 
+                                                       (0x0000001fffffffffULL 
+                                                        & ((QData)((IData)(vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_r1)) 
+                                                           * (QData)((IData)(vlSelfRef.quadra_top__DOT__u_quadra__DOT__sq_r1)))), 8U))));
         vlSelfRef.quadra_top__DOT__u_quadra__DOT__a_r1 
             = vlSelfRef.quadra_top__DOT__u_quadra__DOT__a_w;
+        vlSelfRef.quadra_top__DOT__u_quadra__DOT__x2_r1 
+            = (0x0001ffffU & vlSelfRef.x);
+        vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_r1 
+            = vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_w;
         vlSelfRef.quadra_top__DOT__u_quadra__DOT__sq_r1 
             = (0x00ffffffU & (IData)((0x0000000000ffffffULL 
                                       & (((QData)((IData)(
@@ -159,20 +178,16 @@ void Vquadra_top___024root___nba_sequent__TOP__0(Vquadra_top___024root* vlSelf) 
                                          >> 0x0000000aU))));
         vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_r1 
             = vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_w;
-        vlSelfRef.quadra_top__DOT__u_quadra__DOT__x2_r1 
-            = (0x0001ffffU & vlSelfRef.x);
-        vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_r1 
-            = vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_w;
     } else {
         vlSelfRef.quadra_top__DOT__u_quadra__DOT__y_r = 0U;
         vlSelfRef.quadra_top__DOT__u_quadra__DOT__t0_r2 = 0U;
-        vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2 = 0U;
         vlSelfRef.quadra_top__DOT__u_quadra__DOT__t1_r2 = 0U;
+        vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2 = 0U;
         vlSelfRef.quadra_top__DOT__u_quadra__DOT__a_r1 = 0U;
-        vlSelfRef.quadra_top__DOT__u_quadra__DOT__sq_r1 = 0U;
-        vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_r1 = 0U;
         vlSelfRef.quadra_top__DOT__u_quadra__DOT__x2_r1 = 0U;
         vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_r1 = 0U;
+        vlSelfRef.quadra_top__DOT__u_quadra__DOT__sq_r1 = 0U;
+        vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_r1 = 0U;
     }
     vlSelfRef.y_dv = vlSelfRef.quadra_top__DOT__dv_p2;
     vlSelfRef.quadra_top__DOT__dv_p1 = ((IData)(vlSelfRef.rst_b) 
