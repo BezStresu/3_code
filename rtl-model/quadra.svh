@@ -37,23 +37,23 @@ typedef logic [X2_W-1:0] x2_t;
 
 // Coefficients: 
 // a:
-localparam int  A_I =  4;           //         =  3
-localparam int  A_F = 28;           //         = 22
-localparam int  A_W = A_I + A_F;    //  3 + 22 = 25 (s3.22)
+localparam int  A_I =  4;           //         =  4
+localparam int  A_F = 28;           //         = 28
+localparam int  A_W = A_I + A_F;    //  4 + 28 = 32 (s4.32)
 
 typedef logic signed [A_W-1:0] a_t;
 
 // b:
-localparam int  B_I =  4;           //         =  3
-localparam int  B_F = 28;           //         = 16
-localparam int  B_W = B_I + B_F;    //  3 + 19 = 19 (s3.19)
+localparam int  B_I =  4;           //         =  4
+localparam int  B_F = 28;           //         = 28
+localparam int  B_W = B_I + B_F;    //  4 + 28 = 32 (s4.32)
 
 typedef logic signed [B_W-1:0] b_t;
 
 // c:
-localparam int  C_I =  4;           //         =  2
-localparam int  C_F = 28;           //         = 11
-localparam int  C_W = C_I + C_F;    //  2 + 11 = 13 (s2.11)
+localparam int  C_I =  4;           //         =  4
+localparam int  C_F = 28;           //         = 28
+localparam int  C_W = C_I + C_F;    //  4 + 28 = 32 (s4.32)
 
 typedef logic signed [C_W-1:0] c_t;
 

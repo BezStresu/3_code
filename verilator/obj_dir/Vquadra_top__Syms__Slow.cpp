@@ -11,7 +11,7 @@ Vquadra_top__Syms::Vquadra_top__Syms(VerilatedContext* contextp, const char* nam
     , TOP{this, namep}
 {
     // Check resources
-    Verilated::stackCheck(382);
+    Verilated::stackCheck(262);
     // Setup sub module instances
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-12);

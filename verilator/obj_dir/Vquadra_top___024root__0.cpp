@@ -121,90 +121,32 @@ void Vquadra_top___024root___nba_sequent__TOP__0(Vquadra_top___024root* vlSelf) 
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vquadra_top___024root___nba_sequent__TOP__0\n"); );
     Vquadra_top__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Locals
-    VlWide<3>/*95:0*/ __Vtemp_2;
-    VlWide<3>/*95:0*/ __Vtemp_3;
-    VlWide<3>/*95:0*/ __Vtemp_4;
-    VlWide<3>/*95:0*/ __Vtemp_5;
-    VlWide<3>/*95:0*/ __Vtemp_6;
     // Body
     vlSelfRef.quadra_top__DOT__dv_p2 = ((IData)(vlSelfRef.rst_b) 
                                         && (IData)(vlSelfRef.quadra_top__DOT__dv_p1));
-    __Vtemp_2[0U] = (((IData)((0x3fffffffffffffffULL 
-                               & (- (QData)((IData)(
-                                                    (1U 
-                                                     & (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t0_r2 
-                                                        >> 0x0000001eU))))))) 
-                      << 0x0000001fU) | vlSelfRef.quadra_top__DOT__u_quadra__DOT__t0_r2);
-    __Vtemp_2[1U] = (((IData)((0x3fffffffffffffffULL 
-                               & (- (QData)((IData)(
-                                                    (1U 
-                                                     & (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t0_r2 
-                                                        >> 0x0000001eU))))))) 
-                      >> 1U) | ((IData)(((0x3fffffffffffffffULL 
-                                          & (- (QData)((IData)(
-                                                               (1U 
-                                                                & (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t0_r2 
-                                                                   >> 0x0000001eU)))))) 
-                                         >> 0x00000020U)) 
-                                << 0x0000001fU));
-    __Vtemp_2[2U] = ((IData)(((0x3fffffffffffffffULL 
-                               & (- (QData)((IData)(
-                                                    (1U 
-                                                     & (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t0_r2 
-                                                        >> 0x0000001eU)))))) 
-                              >> 0x00000020U)) >> 1U);
-    __Vtemp_3[0U] = (((IData)((0x3fffffffffffffffULL 
-                               & (- (QData)((IData)(
-                                                    (1U 
-                                                     & (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t1_r2 
-                                                        >> 0x0000001eU))))))) 
-                      << 0x0000001fU) | vlSelfRef.quadra_top__DOT__u_quadra__DOT__t1_r2);
-    __Vtemp_3[1U] = (((IData)((0x3fffffffffffffffULL 
-                               & (- (QData)((IData)(
-                                                    (1U 
-                                                     & (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t1_r2 
-                                                        >> 0x0000001eU))))))) 
-                      >> 1U) | ((IData)(((0x3fffffffffffffffULL 
-                                          & (- (QData)((IData)(
-                                                               (1U 
-                                                                & (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t1_r2 
-                                                                   >> 0x0000001eU)))))) 
-                                         >> 0x00000020U)) 
-                                << 0x0000001fU));
-    __Vtemp_3[2U] = ((IData)(((0x3fffffffffffffffULL 
-                               & (- (QData)((IData)(
-                                                    (1U 
-                                                     & (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t1_r2 
-                                                        >> 0x0000001eU)))))) 
-                              >> 0x00000020U)) >> 1U);
-    __Vtemp_4[0U] = (((IData)((0x3fffffffffffffffULL 
-                               & (- (QData)((IData)(
-                                                    (1U 
-                                                     & (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2 
-                                                        >> 0x0000001eU))))))) 
-                      << 0x0000001fU) | vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2);
-    __Vtemp_4[1U] = (((IData)((0x3fffffffffffffffULL 
-                               & (- (QData)((IData)(
-                                                    (1U 
-                                                     & (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2 
-                                                        >> 0x0000001eU))))))) 
-                      >> 1U) | ((IData)(((0x3fffffffffffffffULL 
-                                          & (- (QData)((IData)(
-                                                               (1U 
-                                                                & (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2 
-                                                                   >> 0x0000001eU)))))) 
-                                         >> 0x00000020U)) 
-                                << 0x0000001fU));
-    __Vtemp_4[2U] = ((IData)(((0x3fffffffffffffffULL 
-                               & (- (QData)((IData)(
-                                                    (1U 
-                                                     & (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2 
-                                                        >> 0x0000001eU)))))) 
-                              >> 0x00000020U)) >> 1U);
-    VL_ADD_W(3, __Vtemp_5, __Vtemp_3, __Vtemp_4);
-    VL_ADD_W(3, __Vtemp_6, __Vtemp_2, __Vtemp_5);
     if (vlSelfRef.rst_b) {
+        vlSelfRef.quadra_top__DOT__u_quadra__DOT__y_r 
+            = (0x00ffffffU & ((vlSelfRef.quadra_top__DOT__u_quadra__DOT__t0_r2 
+                               + (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t1_r2 
+                                  + vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2)) 
+                              >> 5U));
+        vlSelfRef.quadra_top__DOT__u_quadra__DOT__t0_r2 
+            = (vlSelfRef.quadra_top__DOT__u_quadra__DOT__a_r1 
+               >> 1U);
+        vlSelfRef.quadra_top__DOT__u_quadra__DOT__t1_r2 
+            = (0x7fffffffU & VL_SHIFTR_III(31,32,32, 
+                                           (vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_r1 
+                                            * vlSelfRef.quadra_top__DOT__u_quadra__DOT__x2_r1), 0x00000012U));
+        vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2 
+            = (0x7fffffffU & VL_SHIFTR_III(31,32,32, 
+                                           (vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_r1 
+                                            * vlSelfRef.quadra_top__DOT__u_quadra__DOT__sq_r1), 0x00000019U));
+        vlSelfRef.quadra_top__DOT__u_quadra__DOT__a_r1 
+            = vlSelfRef.quadra_top__DOT__u_quadra__DOT__a_w;
+        vlSelfRef.quadra_top__DOT__u_quadra__DOT__x2_r1 
+            = (0x0001ffffU & vlSelfRef.x);
+        vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_r1 
+            = vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_w;
         vlSelfRef.quadra_top__DOT__u_quadra__DOT__sq_r1 
             = (0x00ffffffU & (IData)((0x0000000000ffffffULL 
                                       & (((QData)((IData)(
@@ -214,36 +156,18 @@ void Vquadra_top___024root___nba_sequent__TOP__0(Vquadra_top___024root* vlSelf) 
                                                             (0x0001ffffU 
                                                              & vlSelfRef.x)))) 
                                          >> 0x0000000aU))));
-        vlSelfRef.quadra_top__DOT__u_quadra__DOT__a_r1 
-            = vlSelfRef.quadra_top__DOT__u_quadra__DOT__a_w;
         vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_r1 
             = vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_w;
-        vlSelfRef.quadra_top__DOT__u_quadra__DOT__y_r 
-            = (0x00ffffffU & (__Vtemp_6[0U] >> 1U));
-        vlSelfRef.quadra_top__DOT__u_quadra__DOT__t0_r2 = 1U;
-        vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2 = 1U;
-        vlSelfRef.quadra_top__DOT__u_quadra__DOT__t1_r2 
-            = (0x07ffffffU & (IData)((0x0000000007ffffffULL 
-                                      & (VL_MULS_QQQ(48, 
-                                                     (0x0000ffffffffffffULL 
-                                                      & VL_EXTENDS_QI(48,32, vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_r1)), 
-                                                     (0x0000ffffffffffffULL 
-                                                      & VL_EXTENDS_QI(48,17, vlSelfRef.quadra_top__DOT__u_quadra__DOT__x2_r1))) 
-                                         >> 0x00000015U))));
-        vlSelfRef.quadra_top__DOT__u_quadra__DOT__x2_r1 
-            = (0x0001ffffU & vlSelfRef.x);
-        vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_r1 
-            = vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_w;
     } else {
-        vlSelfRef.quadra_top__DOT__u_quadra__DOT__sq_r1 = 0U;
-        vlSelfRef.quadra_top__DOT__u_quadra__DOT__a_r1 = 0U;
-        vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_r1 = 0U;
         vlSelfRef.quadra_top__DOT__u_quadra__DOT__y_r = 0U;
         vlSelfRef.quadra_top__DOT__u_quadra__DOT__t0_r2 = 0U;
-        vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2 = 0U;
         vlSelfRef.quadra_top__DOT__u_quadra__DOT__t1_r2 = 0U;
+        vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2 = 0U;
+        vlSelfRef.quadra_top__DOT__u_quadra__DOT__a_r1 = 0U;
         vlSelfRef.quadra_top__DOT__u_quadra__DOT__x2_r1 = 0U;
         vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_r1 = 0U;
+        vlSelfRef.quadra_top__DOT__u_quadra__DOT__sq_r1 = 0U;
+        vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_r1 = 0U;
     }
     vlSelfRef.y_dv = vlSelfRef.quadra_top__DOT__dv_p2;
     vlSelfRef.quadra_top__DOT__dv_p1 = ((IData)(vlSelfRef.rst_b) 

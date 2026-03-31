@@ -3,8 +3,6 @@
 `timescale 1ps/1ps
 
 `include "quadra.svh"
-// `include "square.sv"
-// `include "lut.sv"
 
 module quadra
 (
@@ -63,18 +61,10 @@ module quadra
     t1_t t1_w;
     t2_t t2_w;
 
-    logic signed [T1_W+X2_W-1:0] t1_temp_full; 
-
     always_comb begin
-        t1_temp_full = b_r1 * $signed(x2_r1);
-        t1_w = t1_temp_full[T1_W+X2_W-1:21]; 
-        t2_w = 1;
+        t1_w = (b_r1 * x2_r1) >>> (B_F + X2_F - T1_F);
+        t2_w = (c_r1 * sq_r1) >>> (C_F + SQ_F - T2_F);
     end
-
-    // always_comb begin
-    //     t1_w = (b_r1 * x2_r1) >> (X2_F - (T1_F - B_F)); 
-    //     t2_w = (c_r1 * sq_r1) >> (SQ_F - (T2_F - C_F));
-    // end
 
     t0_t t0_r2;
     t1_t t1_r2;
@@ -87,9 +77,7 @@ module quadra
             t2_r2 <= '0;
         end
         else begin
-            //t0_r2 <= a_r1; // warning
-            //t0_r2 <= {{T0_W-A_W{a_r1[A_W-1]}}, a_r1};
-            t0_r2 <= 1; 
+            t0_r2 <= a_r1[A_W-1 -: T0_W]; 
             t1_r2 <= t1_w;
             t2_r2 <= t2_w;
         end
@@ -97,16 +85,9 @@ module quadra
 
     // Stage 3 sum
     s_t s_w;
-    logic signed [T0_W + T1_W + T2_W - 1:0] s_full;
 
     always_comb begin
-        //s_w = t0_r2 + t1_r2 + t2_r2; // Warning
-
-        s_full = {{T1_W+T2_W{t0_r2[T0_W-1]}}, t0_r2} +
-                {{T0_W+T2_W{t1_r2[T1_W-1]}}, t1_r2} +
-                {{T0_W+T1_W{t2_r2[T2_W-1]}}, t2_r2};
-        //s_w = s_full[S_W-1:0];
-        s_w = s_full[S_W:1];
+        s_w = t0_r2 + t1_r2 + t2_r2; // Warning
     end
 
     y_t y_r;
@@ -116,9 +97,7 @@ module quadra
             y_r <= '0;
         end
         else begin
-            //y_r <= s_w; // Warning
-            //y_r <= s_w[S_W-1 -: Y_W];
-            y_r <= s_w[Y_W-1:0];
+            y_r <= s_w[S_W-1 -: Y_W];
         end
     end
 
