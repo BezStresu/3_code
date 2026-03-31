@@ -97,15 +97,19 @@ module quadra
     // Stage 3 sum
     s_t s_w;
 
-    logic signed [S_W-1:0] t0_ext, t1_ext, t2_ext;
+    localparam int MAX_T0_T1 = (T0_W > T1_W) ? T0_W : T1_W;
+    localparam int S_W_TEMP  = (MAX_T0_T1 > T2_W) ? MAX_T0_T1 + 1 : T2_W + 1;
+    logic signed [S_W_TEMP-1:0] t0_ext, t1_ext, t2_ext;
+    logic signed [S_W_TEMP-1:0] s_w_temp;
 
     always_comb begin
-        //s_w = t0_r2 + t1_r2 + t2_r2; // Warning
-        t0_ext = t0_r2;
-        t1_ext = t1_r2;
-        t2_ext = t2_r2;
+        t0_ext = {{(S_W_TEMP-T0_W){t0_r2[T0_W-1]}}, t0_r2};
+        t1_ext = {{(S_W_TEMP-T1_W){t1_r2[T1_W-1]}}, t1_r2};
+        t2_ext = {{(S_W_TEMP-T2_W){t2_r2[T2_W-1]}}, t2_r2};
 
-        s_w = t0_ext + t1_ext + t2_ext;
+        s_w_temp = t0_ext + t1_ext + t2_ext;
+
+        s_w = s_w_temp >> (S_W_TEMP - S_W);
     end
 
     y_t y_r;
