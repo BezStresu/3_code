@@ -74,7 +74,7 @@ module quadra
 
         t2_w_full = c_r1 * sq_r1;
         t2_w_shifted = t2_w_full >>> (C_F + SQ_F - T2_F);
-        t2_w = t2_w_shifted[T2_W-1:0]
+        t2_w = t2_w_shifted[T2_W-1:0];
     end
 
     t0_t t0_r2;
@@ -88,8 +88,7 @@ module quadra
             t2_r2 <= '0;
         end
         else begin
-            //t0_r2 <= a_r1[A_W-1 -: T0_W]; 
-            t0_r2 <= 0;
+            t0_r2 <= a_r1 <<< (T0_F - A_F);
             t1_r2 <= t1_w;
             t2_r2 <= t2_w;
         end
@@ -99,8 +98,7 @@ module quadra
     s_t s_w;
 
     always_comb begin
-        //s_w = t0_r2 + t1_r2 + t2_r2; // Warning
-        s_w = $signed(t0_r2) + $signed(t1_r2) + $signed(t2_r2);
+        s_w = t0_r2 + t1_r2 + t2_r2; // Warning
     end
 
     y_t y_r;
@@ -110,7 +108,7 @@ module quadra
             y_r <= '0;
         end
         else begin
-            y_r <= s_w[S_W-1 -: Y_W];
+            y_r <= (s_w >>> (S_F - Y_F));
         end
     end
 
