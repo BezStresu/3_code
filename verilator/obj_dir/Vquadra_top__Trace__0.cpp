@@ -23,9 +23,9 @@ void Vquadra_top___024root__trace_chg_0_sub_0(Vquadra_top___024root* vlSelf, Ver
     // Body
     uint32_t* const oldp VL_ATTR_UNUSED = bufp->oldp(vlSymsp->__Vm_baseCode + 0);
     if (VL_UNLIKELY((vlSelfRef.__Vm_traceActivity[1U]))) {
-        bufp->chgIData(oldp+0,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__a_w),32);
-        bufp->chgIData(oldp+1,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_w),32);
-        bufp->chgIData(oldp+2,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_w),32);
+        bufp->chgIData(oldp+0,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__a_w),25);
+        bufp->chgIData(oldp+1,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_w),19);
+        bufp->chgSData(oldp+2,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_w),13);
     }
     if (VL_UNLIKELY((vlSelfRef.__Vm_traceActivity[2U]))) {
         bufp->chgBit(oldp+3,(vlSelfRef.quadra_top__DOT__dv_p0));
@@ -34,21 +34,31 @@ void Vquadra_top___024root__trace_chg_0_sub_0(Vquadra_top___024root* vlSelf, Ver
         bufp->chgIData(oldp+6,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__y_r),24);
         bufp->chgIData(oldp+7,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__x2_r1),17);
         bufp->chgIData(oldp+8,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__sq_r1),24);
-        bufp->chgIData(oldp+9,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__a_r1),32);
-        bufp->chgIData(oldp+10,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_r1),32);
-        bufp->chgIData(oldp+11,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_r1),32);
-        bufp->chgIData(oldp+12,((0x7fffffffU & VL_SHIFTRS_III(31,32,32, 
-                                                              VL_MULS_III(32, vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_r1, 
-                                                                          VL_EXTENDS_II(32,18, vlSelfRef.quadra_top__DOT__u_quadra__DOT__x2_r1)), 0x00000012U))),31);
-        bufp->chgIData(oldp+13,((0x7fffffffU & VL_SHIFTRS_III(31,32,32, 
-                                                              VL_MULS_III(32, vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_r1, 
-                                                                          VL_EXTENDS_II(32,25, vlSelfRef.quadra_top__DOT__u_quadra__DOT__sq_r1)), 0x00000019U))),31);
-        bufp->chgIData(oldp+14,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__t0_r2),31);
-        bufp->chgIData(oldp+15,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__t1_r2),31);
-        bufp->chgIData(oldp+16,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2),31);
+        bufp->chgIData(oldp+9,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__a_r1),25);
+        bufp->chgIData(oldp+10,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_r1),19);
+        bufp->chgSData(oldp+11,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_r1),13);
+        bufp->chgIData(oldp+12,((0x3fffffffU & VL_SHIFTRS_III(30,30,32, 
+                                                              (0x3fffffffU 
+                                                               & VL_MULS_III(30, 
+                                                                             (0x3fffffffU 
+                                                                              & VL_EXTENDS_II(30,19, vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_r1)), 
+                                                                             (0x3fffffffU 
+                                                                              & VL_EXTENDS_II(30,18, vlSelfRef.quadra_top__DOT__u_quadra__DOT__x2_r1)))), 6U))),30);
+        bufp->chgIData(oldp+13,((0x1fffffffU & VL_SHIFTRS_III(29,29,32, 
+                                                              (0x1fffffffU 
+                                                               & VL_MULS_III(29, 
+                                                                             (0x1fffffffU 
+                                                                              & VL_EXTENDS_II(29,13, (IData)(vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_r1))), 
+                                                                             (0x1fffffffU 
+                                                                              & VL_EXTENDS_II(29,25, vlSelfRef.quadra_top__DOT__u_quadra__DOT__sq_r1)))), 8U))),29);
+        bufp->chgIData(oldp+14,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__t0_r2),30);
+        bufp->chgIData(oldp+15,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__t1_r2),30);
+        bufp->chgIData(oldp+16,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2),29);
         bufp->chgIData(oldp+17,((0x1fffffffU & (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t0_r2 
                                                 + (vlSelfRef.quadra_top__DOT__u_quadra__DOT__t1_r2 
-                                                   + vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2)))),29);
+                                                   + 
+                                                   (0x3fffffffU 
+                                                    & VL_EXTENDS_II(30,29, vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2)))))),29);
     }
     bufp->chgBit(oldp+18,(vlSelfRef.clk));
     bufp->chgBit(oldp+19,(vlSelfRef.rst_b));

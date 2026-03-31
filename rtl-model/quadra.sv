@@ -79,7 +79,8 @@ module quadra
             t2_r2 <= '0;
         end
         else begin
-            t0_r2 <= a_r1[A_W-1 -: T0_W]; 
+            //t0_r2 <= a_r1[A_W-1 -: T0_W]; 
+            t0_r2 <= 0;
             t1_r2 <= t1_w;
             t2_r2 <= t2_w;
         end
