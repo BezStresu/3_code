@@ -41,7 +41,7 @@ for i = 1:K
 
     bin = dec2bin(idx, 7);
 
-    fprintf(fid_out, "        7'b%s : a = 25'h%s;\n", bin, a_hex);
+    fprintf(fid_out, "        7'b%s : a = 25'sh%s;\n", bin, a_hex);
 endfor
 
 fprintf(fid_out, "        default : a = '0;\n");
@@ -61,7 +61,7 @@ for i = 1:K
 
     bin = dec2bin(idx, 7);
 
-    fprintf(fid_out, "        7'b%s : b = 19'h%s;\n", bin, b_hex);
+    fprintf(fid_out, "        7'b%s : b = 19'sh%s;\n", bin, b_hex);
 endfor
 
 fprintf(fid_out, "        default : b = '0;\n");
@@ -82,7 +82,7 @@ for i = 1:K
 
     bin = dec2bin(idx, 7);
 
-    fprintf(fid_out, "        7'b%s : c = 13'h%s;\n", bin, c_hex);
+    fprintf(fid_out, "        7'b%s : c = 13'sh%s;\n", bin, c_hex);
 endfor
 
 fprintf(fid_out, "        default : c = '0;\n");

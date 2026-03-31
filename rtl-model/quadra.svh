@@ -28,9 +28,9 @@ localparam int  X1_W = X1_I + X1_F; //   1 + 6 =  7 (u1.6)
 typedef logic [X1_W-1:0] x1_t;
 
 // x2: x[16:0] -> u0.17
-localparam int  X2_I = 0;           //          = 1
+localparam int  X2_I = 0;           //          = 0
 localparam int  X2_J = X2_I - X1_F; //
-localparam int  X2_F = X_W - X1_W;  //          = 6
+localparam int  X2_F = X_W - X1_W;  //          = 17
 localparam int  X2_W = X2_I + X2_F; //   0 + 17 = 17 (u0.17)
 
 typedef logic [X2_W-1:0] x2_t;

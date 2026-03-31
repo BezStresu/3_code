@@ -15,7 +15,6 @@ module square
 
     always_comb begin 
         sq_full = x2 * x2;
-        //sq = sq_full >> (2*X2_F - SQ_F); // warning
         sq_full_shifted = sq_full >> (2*X2_F - SQ_F);
         sq = sq_full_shifted[SQ_W-1:0];
     end

@@ -61,11 +61,20 @@ module quadra
     t1_t t1_w;
     t2_t t2_w;
 
+    logic signed [B_W+X2_W-1:0] t1_w_full;
+    logic signed [B_W+X2_W-1:0] t1_w_shifted;  
+
+    logic signed [C_W + SQ_W-1:0] t2_w_full;
+    logic signed [C_W + SQ_W-1:0] t2_w_shifted;  
+
     always_comb begin
-        // t1_w = (b_r1 * x2_r1) >>> (B_F + X2_F - T1_F);
-        // t2_w = (c_r1 * sq_r1) >>> (C_F + SQ_F - T2_F);
-        t1_w = ($signed(b_r1) * $signed({1'b0, x2_r1})) >>> (B_F + X2_F - T1_F);
-        t2_w = ($signed(c_r1) * $signed({1'b0, sq_r1})) >>> (C_F + SQ_F - T2_F);
+        t1_w_full = b_r1 * x2_r1;
+        t1_w_shifted = t1_w_full >>> (B_F + X2_F - T1_F);
+        t1_w = t1_w_shifted[T1_W-1:0];
+
+        t2_w_full = c_r1 * sq_r1;
+        t2_w_shifted = t2_w_full >>> (C_F + SQ_F - T2_F);
+        t2_w = t2_w_shifted[T2_W-1:0]
     end
 
     t0_t t0_r2;
