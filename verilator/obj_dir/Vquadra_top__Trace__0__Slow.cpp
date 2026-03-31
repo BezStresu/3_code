@@ -205,12 +205,12 @@ VL_ATTR_COLD void Vquadra_top___024root__trace_full_0_sub_0(Vquadra_top___024roo
     bufp->fullIData(oldp+9,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__a_r1),32);
     bufp->fullIData(oldp+10,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_r1),32);
     bufp->fullIData(oldp+11,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_r1),32);
-    bufp->fullIData(oldp+12,((0x7fffffffU & VL_SHIFTR_III(31,32,32, 
-                                                          (vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_r1 
-                                                           * vlSelfRef.quadra_top__DOT__u_quadra__DOT__x2_r1), 0x00000012U))),31);
-    bufp->fullIData(oldp+13,((0x7fffffffU & VL_SHIFTR_III(31,32,32, 
-                                                          (vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_r1 
-                                                           * vlSelfRef.quadra_top__DOT__u_quadra__DOT__sq_r1), 0x00000019U))),31);
+    bufp->fullIData(oldp+12,((0x7fffffffU & VL_SHIFTRS_III(31,32,32, 
+                                                           VL_MULS_III(32, vlSelfRef.quadra_top__DOT__u_quadra__DOT__b_r1, 
+                                                                       VL_EXTENDS_II(32,18, vlSelfRef.quadra_top__DOT__u_quadra__DOT__x2_r1)), 0x00000012U))),31);
+    bufp->fullIData(oldp+13,((0x7fffffffU & VL_SHIFTRS_III(31,32,32, 
+                                                           VL_MULS_III(32, vlSelfRef.quadra_top__DOT__u_quadra__DOT__c_r1, 
+                                                                       VL_EXTENDS_II(32,25, vlSelfRef.quadra_top__DOT__u_quadra__DOT__sq_r1)), 0x00000019U))),31);
     bufp->fullIData(oldp+14,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__t0_r2),31);
     bufp->fullIData(oldp+15,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__t1_r2),31);
     bufp->fullIData(oldp+16,(vlSelfRef.quadra_top__DOT__u_quadra__DOT__t2_r2),31);

@@ -62,8 +62,10 @@ module quadra
     t2_t t2_w;
 
     always_comb begin
-        t1_w = (b_r1 * x2_r1) >>> (B_F + X2_F - T1_F);
-        t2_w = (c_r1 * sq_r1) >>> (C_F + SQ_F - T2_F);
+        // t1_w = (b_r1 * x2_r1) >>> (B_F + X2_F - T1_F);
+        // t2_w = (c_r1 * sq_r1) >>> (C_F + SQ_F - T2_F);
+        t1_w = ($signed(b_r1) * $signed({1'b0, x2_r1})) >>> (B_F + X2_F - T1_F);
+        t2_w = ($signed(c_r1) * $signed({1'b0, sq_r1})) >>> (C_F + SQ_F - T2_F);
     end
 
     t0_t t0_r2;
@@ -87,7 +89,8 @@ module quadra
     s_t s_w;
 
     always_comb begin
-        s_w = t0_r2 + t1_r2 + t2_r2; // Warning
+        //s_w = t0_r2 + t1_r2 + t2_r2; // Warning
+        s_w = $signed(t0_r2) + $signed(t1_r2) + $signed(t2_r2);
     end
 
     y_t y_r;
